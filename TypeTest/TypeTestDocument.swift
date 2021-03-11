@@ -22,7 +22,7 @@ struct ImageSet : Codable {
   var value : Int = 0
 }
 
-enum Asset : Codable {
+enum Asset {
   case appIcon(AppIcon)
   case imageSet(ImageSet)
   
@@ -87,16 +87,51 @@ extension Asset {
 }
 
 struct AnyResource : Codable, Identifiable {
+  internal init(name: String, asset: Asset, id: UUID = .init()) {
+    self.name = name
+    self.id = id
+    self.asset = asset
+  }
+  
   var name : String
   var id : UUID = .init()
   var asset : Asset
   
+  
+  enum CodingKeys : CodingKey, CaseIterable {
+    case name
+    case appIcon
+    case imageSet
+  }
+  
   func encode(to encoder: Encoder) throws {
-    
+    var container = encoder.container(keyedBy: CodingKeys.self)
+    try container.encode(name, forKey: .name)
+    switch self.asset {
+    case .appIcon(let appIcon):
+      try container.encode(appIcon, forKey: .appIcon)
+    case .imageSet(let imageSet):
+      try container.encode(imageSet, forKey: .imageSet)
+    }
   }
   
   init(from decoder: Decoder) throws {
+    let container = try decoder.container(keyedBy: CodingKeys.self)
+    self.name = try container.decode(String.self, forKey: .name)
+    let types = Set(container.allKeys).intersection([.appIcon, .imageSet])
     
+    guard let type = types.first, types.count == 1 else {
+      throw DecodingError.dataCorrupted(DecodingError.Context.init(codingPath: [], debugDescription: "Mismatched types: \(types)"))
+    }
+    
+    switch type {
+    case .appIcon:
+      self.asset = .appIcon(try container.decode(AppIcon.self, forKey: type))
+    case .imageSet:
+      self.asset = .imageSet(try container.decode(ImageSet.self, forKey: type))
+    default:
+      throw DecodingError.dataCorrupted(DecodingError.Context.init(codingPath: [], debugDescription: "Mismatched type: \(type)"))      
+    }
   }
 }
 
@@ -122,8 +157,9 @@ struct TypeTestDocument: FileDocument {
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-      
-        let data = try JSONEncoder().encode(project)
+      let encoder = JSONEncoder()
+      encoder.outputFormatting = .prettyPrinted
+        let data = try encoder.encode(project)
         return .init(regularFileWithContents: data)
     }
 }
