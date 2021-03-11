@@ -32,7 +32,7 @@ struct ContentView: View {
         Text("No Selection")
       }.toolbar(content: {
         Button(action: {
-          self.document.project.resouces.append(AnyResource(name: "New"))
+          self.document.project.resouces.append(AnyResource(name: "New", asset: .appIcon(.init(name: "Test"))))
         }, label: {
           /*@START_MENU_TOKEN@*/Text("Button")/*@END_MENU_TOKEN@*/
         })
@@ -43,7 +43,8 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView(document: .constant(TypeTestDocument(
-          project: Project(resouces: [AnyResource(name: "test"),AnyResource(name: "test2")])
+          project: Project(resouces: [
+                            AnyResource(name: "test", asset: Asset.appIcon(.init(name: "yep"))),AnyResource(name: "test2", asset: .imageSet(.init(value: 15)))])
         )))
     }
 }

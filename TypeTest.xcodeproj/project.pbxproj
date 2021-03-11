@@ -13,6 +13,8 @@
 		B3C2C85F25FA509600BD63AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C2C85E25FA509600BD63AA /* Assets.xcassets */; };
 		B3C2C86225FA509600BD63AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C2C86125FA509600BD63AA /* Preview Assets.xcassets */; };
 		B3C2C86C25FA531000BD63AA /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C2C86B25FA531000BD63AA /* ResourceView.swift */; };
+		B3DFCC5325FA6AF700216FF2 /* AppIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DFCC5225FA6AF700216FF2 /* AppIconView.swift */; };
+		B3DFCC5625FA6B1C00216FF2 /* ImageSetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3DFCC5525FA6B1C00216FF2 /* ImageSetView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +27,8 @@
 		B3C2C86325FA509600BD63AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C2C86425FA509600BD63AA /* TypeTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeTest.entitlements; sourceTree = "<group>"; };
 		B3C2C86B25FA531000BD63AA /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
+		B3DFCC5225FA6AF700216FF2 /* AppIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconView.swift; sourceTree = "<group>"; };
+		B3DFCC5525FA6B1C00216FF2 /* ImageSetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSetView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				B3C2C85825FA509400BD63AA /* TypeTestApp.swift */,
+				B3DFCC5225FA6AF700216FF2 /* AppIconView.swift */,
 				B3C2C85A25FA509400BD63AA /* TypeTestDocument.swift */,
 				B3C2C86B25FA531000BD63AA /* ResourceView.swift */,
 				B3C2C85C25FA509400BD63AA /* ContentView.swift */,
@@ -65,6 +70,7 @@
 				B3C2C86325FA509600BD63AA /* Info.plist */,
 				B3C2C86425FA509600BD63AA /* TypeTest.entitlements */,
 				B3C2C86025FA509600BD63AA /* Preview Content */,
+				B3DFCC5525FA6B1C00216FF2 /* ImageSetView.swift */,
 			);
 			path = TypeTest;
 			sourceTree = "<group>";
@@ -150,6 +156,8 @@
 				B3C2C85B25FA509400BD63AA /* TypeTestDocument.swift in Sources */,
 				B3C2C85925FA509400BD63AA /* TypeTestApp.swift in Sources */,
 				B3C2C85D25FA509400BD63AA /* ContentView.swift in Sources */,
+				B3DFCC5325FA6AF700216FF2 /* AppIconView.swift in Sources */,
+				B3DFCC5625FA6B1C00216FF2 /* ImageSetView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
