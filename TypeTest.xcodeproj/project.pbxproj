@@ -12,6 +12,7 @@
 		B3C2C85D25FA509400BD63AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C2C85C25FA509400BD63AA /* ContentView.swift */; };
 		B3C2C85F25FA509600BD63AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C2C85E25FA509600BD63AA /* Assets.xcassets */; };
 		B3C2C86225FA509600BD63AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3C2C86125FA509600BD63AA /* Preview Assets.xcassets */; };
+		B3C2C86C25FA531000BD63AA /* ResourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C2C86B25FA531000BD63AA /* ResourceView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		B3C2C86125FA509600BD63AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B3C2C86325FA509600BD63AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3C2C86425FA509600BD63AA /* TypeTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TypeTest.entitlements; sourceTree = "<group>"; };
+		B3C2C86B25FA531000BD63AA /* ResourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 			children = (
 				B3C2C85825FA509400BD63AA /* TypeTestApp.swift */,
 				B3C2C85A25FA509400BD63AA /* TypeTestDocument.swift */,
+				B3C2C86B25FA531000BD63AA /* ResourceView.swift */,
 				B3C2C85C25FA509400BD63AA /* ContentView.swift */,
 				B3C2C85E25FA509600BD63AA /* Assets.xcassets */,
 				B3C2C86325FA509600BD63AA /* Info.plist */,
@@ -143,6 +146,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3C2C86C25FA531000BD63AA /* ResourceView.swift in Sources */,
 				B3C2C85B25FA509400BD63AA /* TypeTestDocument.swift in Sources */,
 				B3C2C85925FA509400BD63AA /* TypeTestApp.swift in Sources */,
 				B3C2C85D25FA509400BD63AA /* ContentView.swift in Sources */,

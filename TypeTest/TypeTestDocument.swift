@@ -14,26 +14,43 @@ extension UTType {
     }
 }
 
-struct TypeTestDocument: FileDocument {
-    var text: String
+struct AppIcon {
+  
+}
 
-    init(text: String = "Hello, world!") {
-        self.text = text
+struct ImageSet {
+  
+}
+
+struct AnyResource : Codable, Identifiable {
+  var name : String
+  var id : UUID = .init()
+}
+
+struct Project : Codable {
+  var resouces : [AnyResource]
+}
+
+struct TypeTestDocument: FileDocument {
+    var project: Project
+
+    init(project: Project? = nil) {
+      self.project = project ?? Project(resouces: .init())
     }
 
     static var readableContentTypes: [UTType] { [.exampleText] }
 
     init(configuration: ReadConfiguration) throws {
-        guard let data = configuration.file.regularFileContents,
-              let string = String(data: data, encoding: .utf8)
+        guard let data = configuration.file.regularFileContents
         else {
             throw CocoaError(.fileReadCorruptFile)
         }
-        text = string
+      self.project = try JSONDecoder().decode(Project.self, from: data)
     }
     
     func fileWrapper(configuration: WriteConfiguration) throws -> FileWrapper {
-        let data = text.data(using: .utf8)!
+      
+        let data = try JSONEncoder().encode(project)
         return .init(regularFileWithContents: data)
     }
 }
